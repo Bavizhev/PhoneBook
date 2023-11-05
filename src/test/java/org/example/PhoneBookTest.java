@@ -33,4 +33,15 @@ class PhoneBookTest {
         assertEquals("Bob", phoneBook.findByNumber("5678901234"));
         assertNull(phoneBook.findByNumber("5555555555")); // Non-existing number
     }
+
+    @Test
+    public void testFindByName() {
+        phoneBook.add("John", "1234567890");
+        phoneBook.add("Alice", "9876543210");
+        phoneBook.add("Bob", "5678901234");
+
+        assertEquals("1234567890", phoneBook.findByName("John"));
+        assertEquals("9876543210", phoneBook.findByName("Alice"));
+        assertNull(phoneBook.findByName("Charlie")); // Non-existing name
+    }
 }
