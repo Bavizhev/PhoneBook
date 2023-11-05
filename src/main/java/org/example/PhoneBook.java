@@ -1,8 +1,6 @@
 package org.example;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class PhoneBook {
     private Map<String, String> contacts;
@@ -30,6 +28,8 @@ public class PhoneBook {
     }
 
     public List<String> printAllNames() {
-        return null;
+        List<String> names = new ArrayList<>(contacts.keySet());
+        Collections.sort(names);
+        return names;
     }
 }
